@@ -9,6 +9,7 @@
             --primary: #4a90e2;
             --dark: #2c3e50;
             --bg: #f8f9fa;
+            --light-gray: #e9ecef;
         }
 
         body { 
@@ -34,23 +35,42 @@
         h1 { margin: 0; color: var(--dark); font-size: 2.5em; }
         .subtitle { color: var(--primary); font-weight: 600; font-size: 1.1em; margin-top: 10px; }
 
-        /* Section Compétences statique */
-        .skills-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
+        /* --- Section Compétences avec Barres --- */
+        .skills-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             margin-bottom: 40px;
         }
 
-        .skill-tag {
-            background: #e9ecef;
+        .skill-item { margin-bottom: 20px; }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
             color: var(--dark);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.9em;
-            font-weight: 500;
-            border: 1px solid #dee2e6;
+        }
+
+        .progress-bar {
+            background: var(--light-gray);
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: var(--primary);
+            height: 100%;
+            border-radius: 10px;
+            /* Animation de chargement à l'ouverture */
+            animation: load 2s ease-out forwards;
+        }
+
+        @keyframes load {
+            from { width: 0; }
         }
 
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -79,25 +99,12 @@
             margin-bottom: 10px;
         }
 
-        .status-badge {
-            background: #fff3cd;
-            color: #856404;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: bold;
-            margin-top: 15px;
-            width: fit-content;
-        }
-
         .btn-link {
             margin-top: 20px;
             text-decoration: none;
             color: var(--primary);
             font-weight: bold;
             font-size: 0.9em;
-            display: inline-flex;
-            align-items: center;
         }
 
         .about {
@@ -116,60 +123,75 @@
 <div class="container">
     <header>
         <h1>Boran Sezer</h1>
-        <div class="subtitle">Futur Informaticien | Développeur Passionné</div>
-        <p>Bienvenue sur mon portfolio. Je présente ici mes premiers projets de programmation et d'électronique réalisés en autodidacte.</p>
+        <div class="subtitle">Futur Informaticien | Développeur D.E.L.T.A</div>
+        <p>Passionné par l'informatique et l'électronique, je développe des solutions logicielles en autodidacte.</p>
     </header>
 
-    <div class="skills-section">
-        <span class="skill-tag">Langage C</span>
-        <span class="skill-tag">Python (IA)</span>
-        <span class="skill-tag">C++ / Arduino</span>
-        <span class="skill-tag">HTML / CSS</span>
-        <span class="skill-tag">VS Code</span>
-        <span class="skill-tag">GitHub</span>
+    <div class="skills-container">
+        <h2 style="margin-top:0; color: var(--dark); font-size: 1.5em;">Mes Capacités</h2>
+        
+        <div class="skill-item">
+            <div class="skill-info"><span>Langage C</span><span>75%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-info"><span>Python (IA & Automatisation)</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-info"><span>C++ / Arduino</span><span>60%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-info"><span>HTML / CSS</span><span>50%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+        </div>
     </div>
 
     <div class="grid">
         <div class="card">
             <div>
-                <span class="badge">JEU C</span>
-                <h3>Jeu de Nim</h3>
-                <p>Un jeu de stratégie contre l'ordinateur développé en C. Utilisation de la logique algorithmique pour gérer les règles du jeu.</p>
+                <span class="badge">PROJET PHARE</span>
+                <h3>Projet D.E.L.T.A</h3>
+                <p>Mon assistant IA personnel. Un projet complexe mêlant Python, traitement de données et automatisation.</p>
             </div>
-            <a href="https://github.com/bobobossssssrg/jeu-de-nim-c" class="btn-link" target="_blank">Voir le projet →</a>
+            <a href="https://github.com/Boran-sezer/D.E.L.T.A" class="btn-link" target="_blank">Accéder au dépôt GitHub →</a>
         </div>
 
         <div class="card">
             <div>
-                <span class="badge">JEU C</span>
-                <h3>Jeu du Juste Nombre</h3>
-                <p>Projet d'apprentissage sur la gestion des variables, du hasard (rand) et des structures de contrôle en C.</p>
+                <span class="badge">ALGORITHMIE</span>
+                <h3>Jeu de Nim</h3>
+                <p>Implémentation en C d'un jeu de stratégie. Travail sur la logique de l'IA et les structures de données.</p>
             </div>
-            <a href="https://github.com/bobobossssssrg/jeu-du-juste-nombre-c" class="btn-link" target="_blank">Voir le projet →</a>
+            <a href="https://github.com/bobobossssssrg/jeu-de-nim-c" class="btn-link" target="_blank">Voir le code →</a>
         </div>
         
         <div class="card">
             <div>
-                <span class="badge">PROJET PYTHON</span>
-                <h3>Projet D.E.L.T.A</h3>
-                <p>Assistant personnel intelligent inspiré par JARVIS. Capable de traiter des commandes et d'évoluer selon mes besoins.</p>
+                <span class="badge">ÉLECTRONIQUE</span>
+                <h3>Projet Rover</h3>
+                <p>Système mobile commandé à distance via Wi-Fi. Développement en C++ sur architecture Arduino/ESP32.</p>
             </div>
-            <a href="https://github.com/Boran-sezer/D.E.L.T.A" class="btn-link" target="_blank">Voir le projet →</a>
+            <p style="font-size: 0.8em; color: #888; margin-top: 15px;">Statut : Phase de test matériel</p>
         </div> 
 
         <div class="card">
             <div>
-                <span class="badge">PROJET C++ (ARDUINO)</span>
-                <h3>Projet Rover</h3>
-                <p>Conception d'un rover mobile piloté via Wi-Fi. Focus sur l'intégration matériel/logiciel et la communication réseau.</p>
-                <div class="status-badge">DEVELOPPEMENT EN COURS</div>
+                <span class="badge">DÉBUTANT</span>
+                <h3>Juste Nombre</h3>
+                <p>Premier projet en C pour consolider les bases des boucles et des conditions.</p>
             </div>
+            <a href="https://github.com/bobobossssssrg/jeu-du-juste-nombre-c" class="btn-link" target="_blank">Voir le code →</a>
         </div>
     </div>
 
     <div class="about">
-        <h2 style="margin-top:0">À propos de moi</h2>
-        <p>"Actuellement en Terminale STI2D option SIN, je me passionne pour le développement logiciel. J'ai commencé par apprendre les bases du langage C sur VS Code pour comprendre la logique de programmation. Mon objectif est de transformer cette passion en métier."</p>
+        <h2 style="margin-top:0">À propos</h2>
+        <p>"Actuellement en Terminale STI2D option SIN, j'aspire à devenir ingénieur en informatique. Maîtrisant les concepts de base du C et du Python, je continue d'apprendre chaque jour pour perfectionner mes outils."</p>
     </div>
 </div>
 
