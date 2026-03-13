@@ -10,7 +10,6 @@
             --dark: #2c3e50;
             --bg: #f8f9fa;
             --light-gray: #e9ecef;
-            --success: #2ecc71;
         }
 
         body { 
@@ -36,6 +35,7 @@
         h1 { margin: 0; color: var(--dark); font-size: 2.5em; }
         .subtitle { color: var(--primary); font-weight: 600; font-size: 1.1em; margin-top: 10px; }
 
+        /* --- Section Compétences avec Barres --- */
         .skills-container {
             background: white;
             padding: 30px;
@@ -68,7 +68,9 @@
             animation: load 2s ease-out forwards;
         }
 
-        @keyframes load { from { width: 0; } }
+        @keyframes load {
+            from { width: 0; }
+        }
 
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
@@ -96,32 +98,13 @@
             margin-bottom: 10px;
         }
 
-        .actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
         .btn-link {
+            margin-top: 20px;
             text-decoration: none;
             color: var(--primary);
             font-weight: bold;
             font-size: 0.9em;
         }
-
-        .btn-test {
-            background: var(--success);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85em;
-            font-weight: bold;
-            transition: opacity 0.2s;
-        }
-
-        .btn-test:hover { opacity: 0.9; }
 
         .about {
             margin-top: 50px;
@@ -145,18 +128,22 @@
 
     <div class="skills-container">
         <h2 style="margin-top:0; color: var(--dark); font-size: 1.5em;">Mes Capacités</h2>
+        
         <div class="skill-item">
             <div class="skill-info"><span>Langage C</span><span>20%</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
         </div>
+
         <div class="skill-item">
             <div class="skill-info"><span>Python (IA & Automatisation)</span><span>20%</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
         </div>
+
         <div class="skill-item">
             <div class="skill-info"><span>C++ / Arduino</span><span>60%</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
         </div>
+
         <div class="skill-item">
             <div class="skill-info"><span>HTML</span><span>15%</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 15%;"></div></div>
@@ -168,42 +155,34 @@
             <div>
                 <span class="badge">JEU C</span>
                 <h3>Jeu de Nim</h3>
-                <p>Un jeu de stratégie contre l'ordinateur. Développé en C avec une logique d'IA.</p>
+                <p>Un jeu de stratégie contre l'ordinateur. Développé en C avec une logique d'IA pour rendre les parties aléatoires.</p>
             </div>
-            <div class="actions">
-                <a href="https://github.com/bobobossssssrg/jeu-de-nim-c" class="btn-link" target="_blank">Code source →</a>
-                <a href="https://www.onlinegdb.com/fork/github/bobobossssssrg/jeu-de-nim-c" class="btn-test" target="_blank">▶ Tester le jeu</a>
-            </div>
+            <a href="https://github.com/bobobossssssrg/jeu-de-nim-c" class="btn-link" target="_blank">Voir le projet →</a>
         </div>
 
         <div class="card">
             <div>
                 <span class="badge">JEU C</span>
                 <h3>Jeu du Juste Nombre</h3>
-                <p>Jeu interactif utilisant la gestion du hasard et des boucles de contrôle.</p>
+                <p>Mon premier projet concret : un jeu interactif utilisant la gestion du hasard et des boucles de contrôle.</p>
             </div>
-            <div class="actions">
-                <a href="https://github.com/bobobossssssrg/jeu-du-juste-nombre-c" class="btn-link" target="_blank">Code source →</a>
-                <a href="https://www.onlinegdb.com/fork/github/bobobossssssrg/jeu-du-juste-nombre-c" class="btn-test" target="_blank">▶ Tester le jeu</a>
-            </div>
+            <a href="https://github.com/bobobossssssrg/jeu-du-juste-nombre-c" class="btn-link" target="_blank">Voir le projet →</a>
         </div>
         
         <div class="card">
             <div>
                 <span class="badge">PROJET PYTHON</span>
                 <h3>Projet D.E.L.T.A</h3>
-                <p>Assistant IA inspiré par JARVIS, pleinement fonctionnel et en évolution.</p>
+                <p>Le projet D.E.L.T.A est un assistant IA conçu pour réaliser l'un de mes rêves d'enfance. Inspiré par JARVIS, ce système est pleinement fonctionnel.</p>
             </div>
-            <div class="actions">
-                <a href="https://github.com/Boran-sezer/D.E.L.T.A" class="btn-link" target="_blank">Voir le projet →</a>
-            </div>
+            <a href="https://github.com/Boran-sezer/D.E.L.T.A" class="btn-link" target="_blank">Voir le projet →</a>
         </div> 
 
         <div class="card">
             <div>
                 <span class="badge">PROJET C++ (ARDUINO)</span>
                 <h3>Projet Rover</h3>
-                <p>Unité mobile pilotée via Wi-Fi. (Phase de test matériel).</p>
+                <p>Le projet Rover consiste en une unité mobile pilotée via Wi-Fi. Développement toujours en cours (phase de test matériel).</p>
             </div>
             <p style="font-size: 0.8em; color: #888; margin-top: 15px;">Statut : En développement</p>
         </div>
@@ -211,7 +190,7 @@
 
     <div class="about">
         <h2 style="margin-top:0">À propos</h2>
-        <p>"Actuellement en Terminale STI2D option SIN, je me passionne pour le développement logiciel. Mon objectif est de transformer cette passion en métier."</p>
+        <p>"Actuellement en Terminale STI2D option SIN, je me passionne pour le développement logiciel. J'ai commencé par apprendre les bases du langage C sur VS Code pour comprendre comment fonctionne la logique de programmation. Mon objectif est de transformer cette passion en métier."</p>
     </div>
 </div>
 
